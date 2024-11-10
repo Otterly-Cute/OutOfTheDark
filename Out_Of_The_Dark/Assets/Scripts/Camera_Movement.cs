@@ -11,7 +11,6 @@ public class Camera_Movement : MonoBehaviour
     //https://www.youtube.com/watch?v=H7pjj1K91HE drag and drop
 
     public InputActionReference move;
-    public InputActionReference click;
     public InputActionReference zoom;
 
     private Rigidbody rb;
@@ -48,20 +47,7 @@ public class Camera_Movement : MonoBehaviour
         rb.velocity= new Vector3(x:moveDirection.x * moveSpeed,y:moveDirection.y * 0,z:moveDirection.z * moveSpeed).normalized; 
     } 
 
-    private void OnEnable()
-    {
-        click.action.started += Click;
-    }
-
-    private void OnDisable()
-    {
-        click.action.started -= Click;
-    }
-
-    private void Click(InputAction.CallbackContext obj)
-    {
-        Debug.Log(message: "clicked");
-    }
+    
     /// <summary>
     /// https://gamedevbeginner.com/how-to-zoom-a-camera-in-unity-3-methods-with-examples/
     /// </summary>
