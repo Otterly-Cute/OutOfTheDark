@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -10,6 +11,8 @@ public class Event_Options : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
    
     public Canvas canvas;
+    private int childIndex;
+    public static int tileStage;
 
     private void Awake()
     {
