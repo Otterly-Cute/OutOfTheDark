@@ -15,5 +15,6 @@ public class Spawn : MonoBehaviour
     {
         Instantiate(prefab, tile.position, tile.rotation,tile);
         Event_Options.tileStage++;
+        Debug.Log(Event_Options.tileStage);
     }
 }
