@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 
 public class Event_Deselect : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IDeselectHandler
 {
-    public GameObject plowMenu;
-    public GameObject plantingMenu;
-    public GameObject cancelMenu;
-    public GameObject plantInformationMenu;
-    public static int tileStage = 1;
+    //public GameObject plowMenu;
+    //public GameObject plantingMenu;
+    //public GameObject cancelMenu;
+    //public GameObject plantInformationMenu;
+    //public static int tileStage = 1;
 
     private bool mouseIsOver = false;
 
@@ -28,6 +28,7 @@ public class Event_Deselect : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnDeselect(BaseEventData eventData)
     {
+        Debug.Log("OnDeselect");
         //Close the Window on Deselect only if a click occurred outside this panel
         if (!mouseIsOver)
         {

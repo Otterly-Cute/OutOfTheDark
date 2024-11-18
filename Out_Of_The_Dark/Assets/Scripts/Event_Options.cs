@@ -16,6 +16,7 @@ public class Event_Options : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public GameObject cancelMenu;
     public GameObject plantInformationMenu;
     public static int tileStage = 1;
+    public bool current;
 
     private bool mouseIsOver = false;
 
@@ -59,6 +60,7 @@ public class Event_Options : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        current = true;
         switch (tileStage) 
         {
             case 1:
