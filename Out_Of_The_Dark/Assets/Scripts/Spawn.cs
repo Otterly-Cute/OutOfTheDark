@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
     public GameObject prefab;
+    GameObject selectedTile;
     public Transform tile;
 
     private void Awake()
@@ -14,7 +15,7 @@ public class Spawn : MonoBehaviour
     public void SpawnObject(GameObject prefab)
     {
         Instantiate(prefab, tile.position, tile.rotation,tile);
-        Event_Options.tileStage++;
+        selectedTile.Event_Options.tileStage++;
         Debug.Log(Event_Options.tileStage);
     }
 }

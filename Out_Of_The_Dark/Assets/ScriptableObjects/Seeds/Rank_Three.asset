@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Rank_Three
   m_EditorClassIdentifier: 
   itemType: 2
-  name: 
-  rank: 
+  name: Cone Seed
+  rank: 3
   amount: 0
   discovered: 0
   image: {fileID: 0}

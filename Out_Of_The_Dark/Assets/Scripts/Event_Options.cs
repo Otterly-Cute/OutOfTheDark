@@ -15,8 +15,12 @@ public class Event_Options : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     public GameObject plantingMenu;
     public GameObject cancelMenu;
     public GameObject plantInformationMenu;
-    public static int tileStage = 1;
+    public GameObject plantMenu;
+    public GameObject plowingMenu;
+    public GameObject miniMenu;
+    public int tileStage = 1;
     public bool current;
+   
 
     private bool mouseIsOver = false;
 
@@ -36,55 +40,79 @@ public class Event_Options : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
     }
 
-    //public void OnDeselect(BaseEventData eventData)
-    //{
-    //    //Close the Window on Deselect only if a click occurred outside this panel
-    //    if (!mouseIsOver)
-    //    {
-    //        Debug.Log("Deselcted");
-    //        switch (tileStage)
-    //        {
-    //            case 1:
-    //                plowMenu.SetActive(false); Debug.Log("menu 1 off"); break;
-    //            case 2:
-    //                cancelMenu.SetActive(false); Debug.Log("menu 3 off"); break;
-    //            case 3:
-    //                plantingMenu.SetActive(false); Debug.Log("menu 2 off"); break;
-    //            case 4:
-    //                cancelMenu.SetActive(false); Debug.Log("menu 3 off"); break;
-    //            case 5:
-    //                plantInformationMenu.SetActive(false); Debug.Log("menu 4 off"); break;
-    //        }
-    //    }
-    //}
-
     public void OnPointerClick(PointerEventData eventData)
     {
-        current = true;
-        switch (tileStage) 
-        {
+        
+       switch (tileStage)
+       {
             case 1:
-                plowMenu.SetActive(true); Debug.Log("menu 1"); break;
+                plowingMenu.SetActive(true); SetLocation(); Debug.Log("plowing menu on"); break;
             case 2:
-                cancelMenu.SetActive(true); Debug.Log("menu 3"); break;
+                cancelMenu.SetActive(true); SetLocation(); Debug.Log("cancel menu on"); break;
             case 3:
-                plantingMenu.SetActive(true); Debug.Log("menu 2"); break;
+                plantMenu.SetActive(true); SetLocation(); Debug.Log("planting menu on"); break;
             case 4:
-                cancelMenu.SetActive(true); Debug.Log("menu 3"); break;
+                cancelMenu.SetActive(true); SetLocation(); Debug.Log("cancel menu on"); break;
             case 5:
-                plantInformationMenu.SetActive(true); Debug.Log("menu 4"); break;
-        }
+                plantInformationMenu.SetActive(true); Debug.Log("plant information on"); break;
+       }
     }
 
-    //public void OnPointerEnter(PointerEventData eventData)
-    //{
-    //    mouseIsOver = true;
-    //}
+    public void SetLocation ()
+    {
+        miniMenu.transform.position = gameObject.transform.position;
+    }
 
-    //public void OnPointerExit(PointerEventData eventData)
-    //{
-    //    mouseIsOver=false;
-    //    Debug.Log("mouse is NOT over");
-    //}
 
-}
+        //public void OnDeselect(BaseEventData eventData)
+        //{
+        //    //Close the Window on Deselect only if a click occurred outside this panel
+        //    if (!mouseIsOver)
+        //    {
+        //        Debug.Log("Deselcted");
+        //        switch (tileStage)
+        //        {
+        //            case 1:
+        //                plowMenu.SetActive(false); Debug.Log("menu 1 off"); break;
+        //            case 2:
+        //                cancelMenu.SetActive(false); Debug.Log("menu 3 off"); break;
+        //            case 3:
+        //                plantingMenu.SetActive(false); Debug.Log("menu 2 off"); break;
+        //            case 4:
+        //                cancelMenu.SetActive(false); Debug.Log("menu 3 off"); break;
+        //            case 5:
+        //                plantInformationMenu.SetActive(false); Debug.Log("menu 4 off"); break;
+        //        }
+        //    }
+        //}
+
+        //public void OnPointerClick(PointerEventData eventData)
+        //{
+        //    current = true;
+        //    switch (tileStage) 
+        //    {
+        //        case 1:
+        //            plowMenu.SetActive(true); Debug.Log("menu 1"); break;
+        //        case 2:
+        //            cancelMenu.SetActive(true); Debug.Log("menu 3"); break;
+        //        case 3:
+        //            plantingMenu.SetActive(true); Debug.Log("menu 2"); break;
+        //        case 4:
+        //            cancelMenu.SetActive(true); Debug.Log("menu 3"); break;
+        //        case 5:
+        //            plantInformationMenu.SetActive(true); Debug.Log("menu 4"); break;
+        //    }
+        //}
+
+        //public void OnPointerEnter(PointerEventData eventData)
+        //{
+        //    mouseIsOver = true;
+        //}
+
+        //public void OnPointerExit(PointerEventData eventData)
+        //{
+        //    mouseIsOver=false;
+        //    Debug.Log("mouse is NOT over");
+        //}
+
+    }

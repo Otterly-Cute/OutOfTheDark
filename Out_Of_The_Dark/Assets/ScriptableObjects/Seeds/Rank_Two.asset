@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rank_Two
   m_EditorClassIdentifier: 
   itemType: 2
-  name: 
+  name: Square Seed
   rank: 2
   amount: 0
   discovered: 0
